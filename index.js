@@ -35,7 +35,7 @@ app
   //.set('view engine', 'hbs')
   .use(bodyParser({ extended: false })) // For parsing the body of a POST
   .use('/ta01', ta01Routes)
-  .use('/ta02', ta02Routes)
+  .use('/ta02', ta02Routes.routes)
   .use('/ta03', ta03Routes)
   .use('/ta04', ta04Routes)
   .get('/', (req, res, next) => {

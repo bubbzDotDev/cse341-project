@@ -12,11 +12,31 @@
         <h1>
           <%= title %>
         </h1>
-        <p>This is the placeholder for Team Activity 02</p>
+        
       </div>
     </div>
     <div class="container">
-
+      <p>
+        <%= addError %>
+      </p>
+      <form action="/ta02/addUser" method="POST">
+        <input type="text" name="username">
+        <button type="submit">Add User</button>
+      </form>
+      <ul>
+        <% for (let user of userList) { %>
+          <li>
+            <%= user.username %>
+          </li>
+        <% } %>
+      </ul>
+      <form action="/ta02/removeUser" method="POST">
+        <input type="text" name="username">
+        <button type="submit">Remove User</button>
+      </form>
+      <p>
+        <%= removeError %>
+      </p>
     </div>
 
 
