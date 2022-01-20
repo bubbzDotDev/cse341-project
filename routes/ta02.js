@@ -33,11 +33,15 @@ router.post('/addUser', (req, res, next) => {
   if (uIndex > -1) {
     addError = `${req.body.username} already exists on the list. Please try a different name.`;
   } else {
-    users.push({
-      username: req.body.username
-    });
-    addError = '';
-    removeError = '';
+    if (req.body.username === '') {
+      addError = 'Name cannot be empty. Please try again.';
+    } else {
+      users.push({
+        username: req.body.username
+      });
+      addError = '';
+      removeError = '';
+    }
   }
   res.redirect('/ta02');
 });

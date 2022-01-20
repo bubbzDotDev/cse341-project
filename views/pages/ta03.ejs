@@ -3,6 +3,7 @@
 
 <head>
   <% include ../includes/header.ejs %>
+  <link rel="stylesheet" href="/stylesheets/ta03.css">
 </head>
 
 <body>
@@ -12,11 +13,28 @@
         <h1>
           <%= title %>
         </h1>
-        <p>This is the placeholder for Team Activity 03</p>
       </div>
     </div>
     <div class="container">
-
+      <form action="/ta03/search" method="GET">
+        <input type="text" name="item">
+        <button type="submit">Search</button>
+      </form>
+      <ul class="images">
+      <% data.forEach(image => { %>
+        <li>
+          <h2><%= image.name %></h2>
+          <p><strong>$<%= image.price %></strong></p>
+          <img src="<%= image.imageUrl %>" alt="<%= image.name %>">
+          <ul class="tags">
+            <% image.tags.forEach(tag => { %>
+              <li><%= tag %></li>
+            <% }); %>
+          </ul>
+          <p><%= image.description %></p>
+        </li>
+      <% }); %>
+      </ul>
     </div>
 
 
