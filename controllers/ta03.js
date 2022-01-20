@@ -1,5 +1,3 @@
-const fetch = require('node-fetch');
-
 const Item = require('../models/ta03');
 
 exports.getItems = (req, res, next) => {

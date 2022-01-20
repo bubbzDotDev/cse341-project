@@ -28,7 +28,7 @@
           <img src="<%= image.imageUrl %>" alt="<%= image.name %>">
           <ul class="tags">
             <% image.tags.forEach(tag => { %>
-              <li><%= tag %></li>
+              <li><a href="/ta03/search?item=<%= tag %>"><%= tag %></a></li>
             <% }); %>
           </ul>
           <p><%= image.description %></p>
@@ -36,8 +36,5 @@
       <% }); %>
       </ul>
     </div>
-
-
 </body>
-
 </html>
