@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <% include ../includes/header.ejs %>
+  <% if (style === '1') { %>
+    <link rel="stylesheet" href="stylesheets/ta05-dark.css">
+  <% } else if (style === '2') { %>
+    <link rel="stylesheet" href="stylesheets/ta05-light.css">
+  <% } %>
+</head>
+
+<body>
+  <% include ../includes/nav.ejs %>
+    <div class="jumbotron text-center">
+      <div class="container">
+        <h1>
+          <%= title %>
+        </h1>
+        <p>This is the placeholder for Team Activity 05</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <form action="/ta05/change-style" method="POST">
+        <label for="dark">Dark</label>
+        <input type="radio" name="cssColor" id="dark" value="1">
+        <label for="light">Light</label>
+        <input type="radio" name="cssColor" id="light" value="2">
+        <button type="submit">Choose Theme</button>
+      </form>
+    </div>
+
+</body>
+
+</html>
