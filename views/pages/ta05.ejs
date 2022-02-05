@@ -22,13 +22,46 @@
     </div>
 
     <div class="container">
-      <form action="/ta05/change-style" method="POST">
-        <label for="dark">Dark</label>
-        <input type="radio" name="cssColor" id="dark" value="1">
-        <label for="light">Light</label>
-        <input type="radio" name="cssColor" id="light" value="2">
-        <button type="submit">Choose Theme</button>
-      </form>
+
+      <!-- Changing styles -->
+      <div>
+        <form action="/ta05/change-style" method="POST">
+          <label for="dark">Dark</label>
+          <input type="radio" name="cssColor" id="dark" value="1">
+          <label for="light">Light</label>
+          <input type="radio" name="cssColor" id="light" value="2">
+          <button type="submit">Choose Theme</button>
+        </form>
+      </div>
+      
+      <!-- Changing counter -->
+      <div style="display: flex">
+        <form action="/ta05/counter" method="POST">
+          <input type="hidden" name="counter" value="1">
+          <button type="submit">+</button>
+        </form>
+
+        <strong>
+          &nbsp;
+          <%= counter %>
+          &nbsp;
+        </strong>
+        
+
+        <form action="/ta05/counter" method="POST">
+          <input type="hidden" name="counter" value="-1">
+          <button type="submit">-</button>
+        </form>
+      </div>
+
+      <!-- Resetting session -->
+      <div>
+        <form action="/ta05/reset" method="POST">
+          <input type="hidden" name="reset" value="true">
+          <button type="submit">Reset Session</button>
+        </form>
+      </div>
+
     </div>
 
 </body>
